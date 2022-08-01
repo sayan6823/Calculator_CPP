@@ -1,9 +1,10 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 class calc{
     char ans='y';
-    int choice=0;
+    int choice=0,a,b,val;
 
     public:
     void display(){
@@ -17,44 +18,44 @@ class calc{
 
         switch(choice){
             case 1: 
-                // add();
-                // retry();
+                add();
+                retry();
                 break;
             case 2:
-                // subtract();
-                // retry();
+                subtract();
+                retry();
                 break;
             case 3: 
-                // product();
-                // retry();
+                product();
+                retry();
                 break;
             case 4:
-                // div();
-                // retry();
+                div();
+                retry();
                 break;
             case 5:
-                // power();
-                // retry();
+                power();
+                retry();
                 break;
             case 6:
                 // root();
-                // retry();
+                retry();
                 break;               
             case 7:
                 // typeConversion();
-                // retry();
+                retry();
                 break;
             case 8:
                 // factorial();
-                // retry();
+                retry();
                 break;
             case 9:
                 // modulus();
-                // retry();
+                retry();
                 break;
             case 10:
                 // logarithm();
-                // retry();
+                retry();
                 break;
             case 11:
                 exit(0);
@@ -67,6 +68,65 @@ class calc{
         
         }
     
+    }
+
+
+
+    // Retry function for all the retry operations
+    void retry(){
+        cout<<"\n\nWant to do some more operations (Y/N  or y/n):  ";
+        cin>>ans;
+
+    }
+
+
+    // 1.function.add
+    void add(){
+        cout<<"enter the two numbers: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+        cout<<"The sum is: "<<a+b<<endl;
+    }
+
+    // 2.function.subtract
+    void subtract(){
+        cout<<"enter the two numbers: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+        if(a>b)
+            val=a-b;
+        else
+            val=b-a;
+        cout<<"The difference is: "<<val<<endl;
+
+    }
+
+    // 3.function.multiply
+    void product(){
+        cout<<"enter the two numbers: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+
+        cout<<"The product is: "<<a*b<<endl;
+    }
+
+    // 4.function.divide
+    void div(){
+        cout<<"enter the two numbers: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+        float newVal;
+        newVal=a/b;
+        cout<<"The division is: "<<newVal<<endl;
+    }
+
+    // 5.function.
+    void power(){
+        cout<<"enter the number and the power you want: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+        val=pow(a,b);
+        cout<<"Your ans is: "<<val;
     }
 };
 
