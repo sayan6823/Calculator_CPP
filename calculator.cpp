@@ -1,5 +1,6 @@
 #include<iostream>
 #include<cmath>
+#include<ctime>
 using namespace std;
 
 class calc{
@@ -38,7 +39,7 @@ class calc{
                 retry();
                 break;
             case 6:
-                // root();
+                 root();
                 retry();
                 break;               
             case 7:
@@ -78,6 +79,23 @@ class calc{
         cin>>ans;
 
     }
+    //Design function for the heading.
+    void design()
+{  
+    time_t  t = time(NULL);
+        tm * tPtr = localtime(&t);
+        cout<<"Date:"<<tPtr->tm_mday<<"/"<<tPtr->tm_mon+1<<"/"<<tPtr->tm_year+1900<<endl;
+        cout<<"Time:"<<tPtr->tm_hour<<":"<<tPtr->tm_min<<":"<<tPtr->tm_sec<<endl;
+
+            cout<<"                                                                 Authors:-"<<endl;
+            cout<<"                                                                 Sayan"<<endl;
+            cout<<"                                                                 Soubhagya"<<endl;
+
+
+
+
+            cout<<"                (o)______________________________WELCOME USER___________________________________(o)\n\n"<<endl;
+}
 
 
     // 1.function.add
@@ -128,11 +146,20 @@ class calc{
         val=pow(a,b);
         cout<<"Your ans is: "<<val;
     }
+    //6.Roots
+     void root(){
+        cout<<"enter the number and the power you want: ";
+        cin>>a>>b;
+        cout<<"\n\n";
+        val=pow((float)a,(float)1.0/b);
+        cout<<"Your ans is: "<<val;
+    }
 };
 
 
 int main(){
     calc c;
+    c.design();
     c.display();
     return 0;
 }
